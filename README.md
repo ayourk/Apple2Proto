@@ -2,7 +2,7 @@
 Apple II Prototyping Expansion Card
 
 ## Description
-Recreation of an Apple II Mini Prototyping Expansion Card
+Recreation of an Apple II Mini Prototyping Expansion Card using KiCAD 6.x
 
 ### PCB Layout
 ![A2mini Board Image](Apple2ProtoMini.png "Apple II Prototyping Expansion Card (mini version)")
