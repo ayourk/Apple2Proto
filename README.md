@@ -14,7 +14,7 @@ Full:
 
 ### See Also
 https://github.com/tebl/Apple2-Prototyping-Card <br />
-[Apple II Expansion Card Size Specifications](https://github.com/ayourk/Apple2Proto/raw/master/doc/Apple_II_ExpansionCard_Spec.txt) <br />
-[Apple II Expansion Slot Pinout](https://github.com/ayourk/Apple2Proto/raw/master/docs/Apple2SlotPinout.html) <br />
-[Apple II Hardware Reference](https://github.com/ayourk/Apple2Proto/raw/master/docs/Apple2HardwareReference.pdf) <br />
+[Apple II Expansion Card Size Specifications](https://github.com/ayourk/Apple2Proto/blob/master/docs/Apple_II_ExpansionCard_Spec.txt) <br />
+[Apple II Expansion Slot Pinout](https://github.com/ayourk/Apple2Proto/blob/master/docs/Apple_II_ExpansionCard_Spec.txt) <br />
+[Apple II Hardware Reference](https://github.com/ayourk/Apple2Proto/blob/master/docs/Apple_II_ExpansionCard_Spec.txt) <br />
 
