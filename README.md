@@ -11,7 +11,7 @@ Recreation of an Apple II Prototyping Expansion Cards (3 sizes) using KiCAD 6.0.
 
 ### See Also
 https://github.com/tebl/Apple2-Prototyping-Card <br />
-[Apple II Expansion Card Size Specifications](doc/Apple_II_ExpansionCard_Spec.txt)
-[Apple II Expansion Slot Pinout](doc/Apple2SlotPinout.html)
-[Apple II Hardware Reference](docs/Apple2HardwareReference.pdf)
+[Apple II Expansion Card Size Specifications](doc/Apple_II_ExpansionCard_Spec.txt) <br />
+[Apple II Expansion Slot Pinout](doc/Apple2SlotPinout.html) <br />
+[Apple II Hardware Reference](docs/Apple2HardwareReference.pdf) <br />
 
