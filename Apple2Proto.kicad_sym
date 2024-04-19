@@ -6,7 +6,7 @@
     (property "Value" "Bus_Apple_II_Card_Side" (id 1) (at 15.24 -41.91 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Apple2:Bus_Apple_II_Card" (id 2) (at 0 27.94 0)
+    (property "Footprint" "Apple2Uthernet:Bus_Apple_II_Card" (id 2) (at 0 27.94 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "https://archive.org/details/Apple_II_Mini_Manual/page/n37/mode/2up" (id 3) (at 0 0 0)

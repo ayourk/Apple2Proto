@@ -1,0 +1,512 @@
+<html>
+ <head>   <title>Peripheral Card connector pinout</title>
+ <style>
+ input { // NEEDS to be FIRST!
+   width: 0;
+   height: 0;
+   visibility: hidden;
+ }
+ body, h1, td, span {
+   font-family: sans-serif;
+ }
+ table {
+   color: inherit;
+   background-color: inherit;
+ }
+ // Begin Darkmode toggle CSS
+ input:checked + label {
+   background: #242424;
+ }
+ input:checked + label:after {
+   left:49px;
+   transform: translateX(-100%);
+   background: linear-gradient(180deg,#777,#3a3a3a);
+ }
+ label {
+   width:50px;
+   height:20px;
+   position: relative;
+   display: block;
+   background: #ebebeb;
+   border-radius: 200px;
+   box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+   cursor: pointer;
+   transition: 0.3s;
+ }
+ label:after {
+   content: "";
+   width:18px;
+   height: 18px;
+   position: absolute;
+   top:1px;
+   left:1px;
+   background: linear-gradient(180deg,#ffcc89,#d8860b);
+   border-radius: 180px;
+   box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+   transition: 0.3s;
+ }
+ label:active:after{
+   width: 26px;
+ }
+ input:checked + label svg.sun {
+   fill:#7e7e7e;
+ }
+ input:checked + label svg.moon {
+   fill:#fff;
+ }
+ label svg {
+   position: absolute;
+   width: 12px;
+   top:4px;
+   z-index: 100;
+ }
+ label svg.sun {
+   left:4px;
+   fill:#fff;
+   transition: 0.3s;
+ }
+ label svg.moon {
+   left:34px;
+   fill:#7e7e7e;
+   transition: 0.3s;
+ }
+ // End Darkmode toggle CSS
+ </style>
+ </head>
+<body>
+ <!-- Dark mode toggle button courtesy of https://redstapler.co/pure-css-minimal-dark-mode-toggle-button/ -->
+ <div style="border:0px solid;padding-top:5;margin-right:5;align-content:right;justify-content:right;float:right;">
+   <input type="checkbox" id="darkmode-toggle" checked="checked" />
+   <label for="darkmode-toggle">
+    <svg version="1.1" class="sun" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve">
+      <rect x="152.994" y="58.921" transform="matrix(0.3827 0.9239 -0.9239 0.3827 168.6176 -118.5145)" width="40.001" height="16" />
+      <rect x="46.9" y="164.979" transform="matrix(0.9239 0.3827 -0.3827 0.9239 71.29 -12.4346)" width="40.001" height="16" />
+      <rect x="46.947" y="315.048" transform="matrix(0.9239 -0.3827 0.3827 0.9239 -118.531 50.2116)" width="40.001" height="16" />
+      <rect x="164.966" y="409.112" transform="matrix(-0.9238 -0.3828 0.3828 -0.9238 168.4872 891.7491)" width="16" height="39.999" />
+      <rect x="303.031" y="421.036" transform="matrix(-0.3827 -0.9239 0.9239 -0.3827 50.2758 891.6655)" width="40.001" height="16" />
+      <rect x="409.088" y="315.018" transform="matrix(-0.9239 -0.3827 0.3827 -0.9239 701.898 785.6559)" width="40.001" height="16" />
+      <rect x="409.054" y="165.011" transform="matrix(-0.9239 0.3827 -0.3827 -0.9239 891.6585 168.6574)" width="40.001" height="16" />
+      <rect x="315.001" y="46.895" transform="matrix(0.9238 0.3828 -0.3828 0.9238 50.212 -118.5529)" width="16" height="39.999" />
+      <path d="M248,88c-88.224,0-160,71.776-160,160s71.776,160,160,160s160-71.776,160-160S336.224,88,248,88z M248,392 c-79.4,0-144-64.6-144-144s64.6-144,144-144s144,64.6,144,144S327.4,392,248,392z" />
+      <rect x="240" width="16" height="72" />
+      <rect x="62.097" y="90.096" transform="matrix(0.7071 0.7071 -0.7071 0.7071 98.0963 -40.6334)" width="71.999" height="16" />
+      <rect y="240" width="72" height="16" />
+      <rect x="90.091" y="361.915" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 -113.9157 748.643)" width="16" height="71.999" />
+      <rect x="240" y="424" width="16" height="72" />
+      <rect x="361.881" y="389.915" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 397.8562 960.6281)" width="71.999" height="16" />
+      <rect x="424" y="240" width="72" height="16" />
+      <rect x="389.911" y="62.091" transform="matrix(0.7071 0.7071 -0.7071 0.7071 185.9067 -252.6357)" width="16" height="71.999" />
+    </svg>
+    <svg version="1.1" class="moon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 49.739 49.739" style="enable-background:new 0 0 49.739 49.739;" xml:space="preserve">
+     <path d="M25.068,48.889c-9.173,0-18.017-5.06-22.396-13.804C-3.373,23.008,1.164,8.467,13.003,1.979l2.061-1.129l-0.615,2.268
+       c-1.479,5.459-0.899,11.25,1.633,16.306c2.75,5.493,7.476,9.587,13.305,11.526c5.831,1.939,12.065,1.492,17.559-1.258v0
+       c0.25-0.125,0.492-0.258,0.734-0.391l2.061-1.13l-0.585,2.252c-1.863,6.873-6.577,12.639-12.933,15.822
+       C32.639,48.039,28.825,48.888,25.068,48.889z M12.002,4.936c-9.413,6.428-12.756,18.837-7.54,29.253
+       c5.678,11.34,19.522,15.945,30.864,10.268c5.154-2.582,9.136-7.012,11.181-12.357c-5.632,2.427-11.882,2.702-17.752,0.748
+       c-6.337-2.108-11.473-6.557-14.463-12.528C11.899,15.541,11.11,10.16,12.002,4.936z" />
+    </svg>
+   </label>
+ </div>
+<div style="width:auto;">
+<h1><center>Apple II Peripheral Card connector pinout</center></h1>
+<table cellpadding="5" width="100%">
+<tr>
+<td rowspan="28" align="center">The arrow in the middle of the drawing <br />points to the front of the Apple II<canvas id="slot50p" class="glyph1" width ="300px" height ="400px" style="border:1px solid grey"></canvas></td>
+<td>1</td>
+<td><span style="text-decoration:overline">I/O SELECT</span></td>
+<td>This line, normal high, will become low when the microprocessor references page $Cn, where n is the individual slot number.  This signal becomes active during 00 and will drive 10 LSTTL loads*.  This signal is not present on peripheral connector 0 (II+)</td>
+</tr>
+<tr>
+<td nowrap="nowrap">2-17</td>
+<td>A0-A15</td>
+<td>The buffered address bus.  The address on these lines becomes valid during 01 and remains valid through 00.  These lines will each drive 5 LSTTL loads.</td>
+</tr>
+<tr>
+<td>18</td>
+<td>R/<span style="text-decoration:overline">W</span></td>
+<td>Buffered Read/Write signal.  This becomes valid at the same time the address bus does, and goes high during a read cycle and low during a write. This line can drive up to 2 LSTTL loads *.<td>
+</tr>
+<tr>
+<td>19</td>
+<td>SYNC</td>
+<td>On peripheral connector 7 ONLY, this pin is connected to the video timing generator's SYNC signal.</td>
+</tr>
+<tr>
+<td>20</td>
+<td><span style="text-decoration:overline">I/O STROBE</span></td>
+<td>This line goes low during 00 when the address bus contains an address between $C800 and $CFFF.  This line will drive 4 LSTTL loads*.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>READY</td>
+<td>The 6502's RDY input.  Pulling this line low during 01 will halt the microprocessor, with the address bus holding the address of the current location being fetched</td>
+</tr>
+<tr>
+<td>22</td>
+<td><span style="text-decoration:overline">DMA</span></td>
+<td>Pulling this line low disables the 6502's address bus and halts the microprocessor.  This line is held high with a 3k resistor to +5v</td>
+</tr>
+<tr>
+<td>23</td>
+<td>INT OUT</td>
+<td>Daisy-chained interrupt output to lower priority devices.  This pin is usually connected to pin 28 (INT IN)</td>
+</tr>
+<tr>
+<td>24</td>
+<td>DMA OUT</td>
+<td>Daisy-chained DMA output to lower priority devices.  This pin is usually connected to pin 22 
+(DMA IN)</td>
+</tr>
+<tr>
+<td>25</td>
+<td>+5V</td>
+<td>+5 volt power supply.  500mA current is available for ALL peripheral cards.</td>
+</tr>
+<tr>
+<td>26</td>
+<td>GND</td>
+<td>System electrical ground</td>
+</tr>
+<tr>
+<td>27</td>
+<td>DMA IN</td>
+<td>Daisy-chained DMA input from higher priority devices.  Usually connected to pin 24 (DMA OUT)</td>
+</tr>
+<tr>
+<td>28</td>
+<td>INT IN</td>
+<td>Daisy-chained interrupt input from higher priority devices.  Usually connected to pin 23 (INT OUT)</td>
+</tr>
+<tr>
+<td>29</td>
+<td><span style="text-decoration:overline">NMI</span></td>
+<td>Non-Maskable Interrupt.  When this line is pulled low the Apple II computer begins an interrupt cycle and jumps to the interrupt handling routine at location $3FB.</td>
+</tr>
+<tr>
+<td>30</td>
+<td><span style="text-decoration:overline">IRQ</span></td>
+<td>Interrupt ReQuest.  When this line is pulled low the Apple II computer begins an interrupt cycle only if the 6502's I (Interrupt disable) flag is not set.  If so, the 6502 will jump to the interrupt handling routine whose address is stored in locations $3FE and $3FF</td>
+</tr>
+<tr>
+<td>31</td>
+<td><span style="text-decoration:overline">RESET</span></td>
+<td>When this line is pulled low the microprocessor begins a RESET cycle (see page 36 of the Apple II Hardware Reference)</td>
+</tr>
+<tr>
+<td>32</td>
+<td><span style="text-decoration:overline">INH</span></td>
+<td>When this line is pulled low, all ROMs on the Apple board are disabled.  This line is held high by a 2k resistor to +5v</td>
+</tr>
+<tr>
+<td>33</td>
+<td>-12V</td>
+<td>-12 volt power supply.  Maximum current is 200mA for all peripheral boards.</td>
+</tr>
+<tr>
+<td>34</td>
+<td>-5V</td>
+<td>-5 volt power supply.  Maximum current is 200mA for all peripheral boards</td>
+</tr>
+<tr>
+<td>35</td>
+<td nowrap="nowrap">COLOR REF</td>
+<td>On peripheral connector 7 ONLY, this pin is connected to the 3.5Mhz COLOR REFerence signal of the video generator</td>
+</tr>
+<tr>
+<td>36</td>
+<td>7M</td>
+<td>7Mhz clock.  This line will drive 2 LSTTL loads*.</td>
+</tr>
+<tr>
+<td>37</td>
+<td>Q3</td>
+<td>2Mhz asymmetrical clock.  This line will drive 2 LSTTL loads*.</td>
+</tr>
+<tr>
+<td>38</td>
+<td>Phi 01</td>
+<td>Microprocessor's phase one clock.  This line will drive 2 LSTTL loads *.</td>
+</tr>
+<tr>
+<td>39</td>
+<td>USER 1</td>
+<td>This line, when pulled low, disables ALL internal I/O address decoding**.</td>
+</tr>
+<tr>
+<td>40</td>
+<td>Phi 00</td>
+<td>Microprocessors phase zero clock.  This line will drive 2 LSTTL loads*.</td>
+</tr>
+<tr>
+<td>41</td>
+<td nowrap="nowrap"><span style="text-decoration:overline">DEVICE SELECT</span></td>
+<td>This line becomes active (low) on each peripheral connector when the address bus is holding an address between $con) and $C0nF, where n is the slot number plus $8.  This line will drive 10 LSTTL loads*.</td>
+</tr>
+<tr>
+<td>42-49</td>
+<td>D0-D7</td>
+<td>Buffered bi-directional data bus.  The data on this line becomes valid 300nS into 00 on a write cycle, and should be stable no less than 100nS before the end of 00 on a read cycle.  Each data line can drive one LSTTL load.</td>
+</tr>
+<tr>
+<td>50</td>
+<td>+12V</td>
+<td>+12 volt power supply.  This can supply up to 250mA total for all peripheral cards.</td>
+</tr></table>
+<br /><br /><br />
+
+Original information available from <a href="https://osites.tripod.com/peripheral.html">here</a>.<br /><br /></div>
+
+
+<script>
+var glyphForeground = 'rgba(0,0,0,1.0)';
+var glyphBackground = 'rgba(255,255,255,1.0)';
+
+document.getElementById("darkmode-toggle").addEventListener("change", darkmodeToggle);
+document.getElementById("darkmode-toggle").dispatchEvent(new Event("change"));  // If checkbox is checked by default, fire event.
+
+function darkmodeToggle(e) {
+  if (e.target.checked) {
+    glyphForeground = 'rgba(255,255,255,1.0)';
+    glyphBackground = 'rgba(0,0,0,1.0)';
+  } else {
+    glyphForeground = 'rgba(0,0,0,1.0)';
+    glyphBackground = 'rgba(255,255,255,1.0)';
+  }
+  document.body.style.color = glyphForeground;
+  document.body.style.backgroundColor = glyphBackground;
+  drawSlot();
+}
+
+// Function to draw overline
+function drawOverline(ctx, colorFG, text, x, y) {
+  var textMetrics = ctx.measureText(text);
+  var txtW = textMetrics.width;
+  var txtH = parseInt(ctx.font) + 7;
+
+  if (ctx.textAlign === 'right') {
+    txtW = txtW * -1;
+  }
+  ctx.save();
+  ctx.beginPath();
+  ctx.moveTo(x, y - txtH / 2); // Adjusted to position the overline correctly
+  ctx.lineTo(x + txtW, y - txtH / 2); // Adjusted to position the overline correctly
+  ctx.strokeStyle = colorFG;
+  ctx.lineWidth = 1;
+  ctx.stroke();
+  ctx.closePath();
+  ctx.restore();
+}
+
+function pullHigh(ctx, curpin, colorFG, txt, x, y) {
+  var doOverline = false;
+  ctx.fillText(txt, x, y)
+  switch(curpin) {  // Pin Position to overline
+    case 18:  // Only the last letter
+      var textMetrics = ctx.measureText(txt.slice(0, -1));
+      x += textMetrics.width;
+      txt = txt.slice(-1);
+      doOverline = true;
+      break;
+    case  1:
+    case 20:
+    case 22:
+      var textMetrics = ctx.measureText(txt.slice(0, 4));
+      x += textMetrics.width;
+      txt = txt.slice(4);
+      doOverline = true;
+      break;
+    case 29:
+    case 30:
+    case 31:
+    case 32:
+    case 41:
+      var textMetrics = ctx.measureText(txt.slice(-4));
+      x -= textMetrics.width;
+      txt = txt.slice(0, -4);
+      doOverline = true;
+      break;
+    default:
+  }
+  if (doOverline)
+    drawOverline(ctx, colorFG, txt, x, y);
+}
+
+// Draw diagram with HTML5 Canvas
+function drawSlot(elem = document.getElementById('slot50p')) {
+  if (elem === undefined || elem === null) return;
+  var curDiagram = elem; // 1 specific tile
+  var context = curDiagram.getContext('2d');
+
+  var pinX = 5;
+  var pinY = 179;
+  const pinwidth = 7;
+  const pinlen = 10;
+  const pinspacing = 7;
+  const lineWidth = 2;
+  var   sXpos = [
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+  ];
+  var   sYpos = [
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+  ];
+  const pinText = [
+    // Left justified text:
+    "01  I/O SELECT",
+    "02  A00",
+    "03  A01",
+    "04  A02",
+    "05  A03",
+    "06  A04",
+    "07  A05",
+    "08  A06",
+    "09  A07",
+    "10  A08",
+    "11  A09",
+    "12  A10",
+    "13  A11",
+    "14  A12",
+    "15  A13",
+    "16  A14",
+    "17  A15",
+    "18  R/W",
+    "19  SYNC",
+    "20  I/O STROBE",
+    "21  READY",
+    "22  DMA",
+    "23  INT OUT",
+    "24  DMA OUT",
+    "25  +5V",
+    // Right justified text:
+    "GND  26",
+    "DMA IN  27",
+    "INT IN  28",
+    "NMI  29",
+    "IRQ  30",
+    "RESET  31",
+    "INH  32",
+    "-12V  33",
+    "-5V  34",
+    "COLOR REF  35",
+    "7Mhz CLK  36",
+    "Q3  37",
+    "Phi 01  38",
+    "USER 1  39",
+    "Phi 00  40",
+    "DEVICE SELECT  41",
+    "D00  42",
+    "D01  43",
+    "D02  44",
+    "D03  45",
+    "D04  46",
+    "D05  47",
+    "D06  48",
+    "D07  49",
+    "+12V  50"
+  ];
+
+  context.clearRect(0, 0, window.innerWidth,window.innerHeight);
+
+  context.fillStyle = glyphBackground;
+  context.fillRect(0,0,window.innerWidth,window.innerHeight);
+
+  context.save();
+  context.translate(curDiagram.width / 2, curDiagram.height / 2);
+
+  context.scale(1.0, 1.0);
+  context.lineWidth = lineWidth;
+  context.strokeStyle = glyphForeground;
+  context.fillStyle = glyphForeground;
+
+  // define the glyph path(s)
+  context.beginPath();  // Outer shell
+  context.moveTo(-19, 194);
+  context.lineTo(19, 194);
+  context.lineTo(19, -194);
+  context.lineTo(-19, -194);
+  context.lineTo(-19, 195);
+  context.stroke();
+  context.closePath();
+  context.beginPath();  // Inner slot
+  context.moveTo(-1 * pinX, pinY);
+
+  context.lineTo(pinX, pinY);  pinY -= (pinspacing+1);
+  context.textBaseline = "alphabetic";
+  // Pin 1 - 25
+  context.textAlign = "left";
+  for (var i=0; i < 25; i++) {
+    context.lineTo(pinX, pinY);  pinX += pinlen;
+    sXpos[i] = pinX;
+    sYpos[i] = pinY;
+    context.lineTo(pinX, pinY);  pinY -= pinwidth;
+    context.lineTo(pinX, pinY);  pinX -= pinlen;
+    context.lineTo(pinX, pinY);
+    context.lineTo(pinX, pinY+pinwidth);  // optional
+                                 pinY -= pinspacing;
+  }
+  context.lineTo(pinX, pinY);  pinY -= 1;
+  context.lineTo(pinX, pinY);  pinX -= pinlen; 
+  context.lineTo(pinX, pinY);  pinY += (pinspacing+1)
+  context.textAlign = "right";
+  for (var i=25; i < 50; i++) {
+    context.lineTo(pinX, pinY);  pinX -= pinlen;
+    context.lineTo(pinX, pinY);  pinY += pinwidth;
+    context.lineTo(pinX, pinY);  pinX += pinlen;
+    context.lineTo(pinX, pinY);
+    context.lineTo(pinX, pinY-pinwidth);  // optional
+    sXpos[i] = pinX;
+    sYpos[i] = pinY;
+                                 pinY += pinspacing;
+  }
+  context.lineTo(pinX, pinY);  pinY += 2;
+  context.lineTo(pinX, pinY);
+  context.stroke();
+  context.closePath();
+
+  // Draw text separately due to Overline
+  context.textAlign = "left";
+  for (var i=0; i < 25; i++) {
+    pullHigh(context, i+1, glyphForeground, pinText[i], sXpos[i]*2, sYpos[i]);
+  }
+  context.textAlign = "right";
+  for (var i=25; i < 50; i++) {
+    pullHigh(context, i+1, glyphForeground, pinText[i], sXpos[i]*6, sYpos[i]);
+  }
+
+  context.beginPath();  // Arrow pointing down
+  context.lineWidth = 2;
+  context.strokeStyle = glyphForeground;
+  context.fillStyle = glyphForeground;
+  context.moveTo(0, curDiagram.height/4);
+  context.lineTo(0, 164);
+  context.stroke();
+  context.lineWidth = 1;
+  context.lineTo(2.5, 164);
+  context.lineTo(0, 172);  // Tip of arrow
+  context.lineTo(-2.5, 164);
+  context.lineTo(0, 164);
+  context.stroke();
+  context.fill();  // Solid fill triangle
+  context.closePath();
+
+  // make alpha solid (the color doesn't matter)
+  context.fillStyle = 'rgba(0,0,0,0.0)';
+
+  // change composite mode and fill
+  context.globalCompositeOperation = 'destination-out';
+  context.fill();
+  context.restore();
+
+  // reset composite mode to default
+}
+drawSlot();
+</script></body>
+</html>
+
